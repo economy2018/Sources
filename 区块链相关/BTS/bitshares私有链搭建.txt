@@ -1,0 +1,186 @@
+https://github.com/bitshares/bitshares-core/wiki/private-testnet
+https://www.jianshu.com/p/024ee9fcf8fc
+
+
+assets:资产
+balances:账户代币资产信息
+vesting_balances：
+witness_candidates：见证节点候选人
+committee_candidates:委员会候选人
+worker_candidates:雇佣工候选人
+chain_id:a hash of the genesis state
+immutable_parameters:不可变的参数
+
+
+
+
+一.启动节点命令：
+witness_node --data-dir data/my-blockprod/ --enable-stale-production
+1.命令行中的参数都可以在config.ini里面配置
+2.--enable-stale-production是说在零块或非常旧的块链上生产区块，单节点后续一般用不到。
+本地测试信息：
+1749980ms th_a       main.cpp:127                  create_new_config_fi ] Writing new config file at /home/cary/projects/bitshares-core/data/my-blockprod/config.ini
+1750003ms th_a       witness.cpp:88                plugin_initialize    ] witness plugin:  plugin_initialize() begin
+1750018ms th_a       witness.cpp:99                plugin_initialize    ] Public Key: BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+1750019ms th_a       witness.cpp:117               plugin_initialize    ] witness plugin:  plugin_initialize() end
+1750019ms th_a       db_management.cpp:151         open                 ] Wiping object_database due to missing or wrong version
+1750019ms th_a       object_database.cpp:93        wipe                 ] Wiping object database...
+1750019ms th_a       object_database.cpp:95        wipe                 ] Done wiping object databse.
+1750019ms th_a       object_database.cpp:106       open                 ] Opening object database from /home/cary/projects/bitshares-core/data/my-blockprod/blockchain ...
+1750036ms th_a       object_database.cpp:111       open                 ] Done opening object database.
+1750040ms th_a       application.cpp:330           operator()           ] Initializing database...
+1762611ms th_a       db_debug.cpp:88               debug_dump           ] total_balances[asset_id_type()].value: 12205723874026 core_asset_data.current_supply.value: 253409943611989 
+1762649ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 104.236.144.84:1777
+1762649ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 128.199.143.47:2015
+1762649ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 23.92.53.182:1776
+1762650ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 192.121.166.162:1776
+1762650ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 51.15.61.160:1776
+1762967ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 114.92.226.109:62015
+1765133ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 148.251.80.54:4243
+1765446ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 208.110.65.114:50696
+1766487ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 45.77.136.107:1776
+1766916ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 71.197.2.119:1776
+1767287ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 104.145.234.6:1777
+1767433ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 149.56.17.159:1776
+1772779ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 108.61.176.106:1776
+1773135ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 84.200.84.162:1776
+1773755ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 138.201.137.206:1776
+1774469ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 45.32.117.94:1776
+1776337ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 45.32.159.93:1776
+1776337ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 23.92.53.182:1776
+1776337ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 52.119.1.55:1776
+1776338ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 213.167.243.194:1776
+1776338ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 119.28.5.253:1776
+1776338ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 94.130.15.169:1776
+1776338ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 185.183.58.134:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 144.76.195.241:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 108.61.176.106:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 138.201.137.206:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 81.89.101.133:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 173.249.24.86:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 149.56.17.159:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 52.47.147.119:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 192.121.166.162:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 45.79.174.179:1776
+1776339ms th_a       application.cpp:191           reset_p2p_node       ] Adding seed node 84.200.84.162:1776
+1776353ms th_a       application.cpp:206           reset_p2p_node       ] Configured p2p node to listen on 0.0.0.0:40264
+1776357ms th_a       witness.cpp:122               plugin_startup       ] witness plugin:  plugin_startup() begin
+1776357ms th_a       witness.cpp:137               plugin_startup       ] No witnesses configured! Please add witness IDs and private keys to configuration.
+1776357ms th_a       witness.cpp:138               plugin_startup       ] witness plugin:  plugin_startup() end
+1776357ms th_a       main.cpp:246                  main                 ] Started BitShares node on a chain with 0 blocks.
+1776357ms th_a       main.cpp:247                  main                 ] Chain ID is 4018d7844c78f6a6c41c6a552b898022310fc5dec06da467ee7905a8dad512c8
+
+
+
+二.使用API查询正在运行节点的chain_id:
+curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:11011/rpc && echo
+
+三，创建一个钱包：
+1.cli_wallet --wallet-file my-wallet.json --chain-id cf307110d029cb882d126bf0488dc4864772f68d9888d86b458d16e6c36aa74b --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
+注：需要指定连接的链的chain-id(由于创世时间戳不同，导致chain-id不同，不能照搬官网上的id)
+2.需要设置钱包的pass，它是用来加密私钥的
+
+四，钱包操作
+1.claim an account
+unlock pass
+import_key "nathan" 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+//交易在网络中声明自己的资产
+import_balance nathan [5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3] true
+
+
+-------------------------------------------------github bitshare-core wiki--------------------------------------------------------------------
+https://github.com/bitshares/bitshares-core/wiki/chain-locked-tx
+1.chain-locked transactions
+添加chain ID到signature中，可以减少不是TaPoS共识的交易在Graphene-based的链之间迁移。
+2.Wallet functionality
+在cli_wallet的钱包文件中保存了chain ID，一个钱包文件只能用于一个单链；在创建一个钱包文件时，可在命令行中指定chain_id；
+在连接API服务器时，cli_wallet会将服务器提供的chain ID和客户端的chain ID匹配，如果匹配失败立即断开连接。
+3.Light wallet functionality
+目前，请钱包只是用它的backing full node指定的chain ID来签名交易
+
+
+https://github.com/bitshares/bitshares-core/wiki/CLI-Wallet-Cookbook
+
+
+----------------------------------------------------------bitshare API----------------------------------------------------------
+1.running a Local Test Network
+#第一次带参数启动
+witness_node --rpc-endpoint "127.0.0.1:8090" --enable-stale-production -w \""1.6.0"\" \""1.6.1"\" \""1.6.2"\" \""1.6.3"\" \""1.6.4"\"
+#后续启动，只需要指明config.init所在文件夹即可启动
+witness_node --data-dir data/my-blockprod/ --enable-stale-production
+
+2.cli_wallet
+#launch a cli_wallet
+$cli_wallet --wallet-file my-wallet.json --chain-id 9149bd9e8291a4fe2633444ddb64aa61cbe7f4faea38c74bb80ee3c25b6865d9 --server-rpc-endpoint ws://127.0.0.1:11011 -u '' -p ''
+#set pass
+new >>>set_password password
+locked>>>unlock password
+
+3.Account Management
+#通过私钥导入账户到钱包
+unlocked >>>import_key "nathan" 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+#查看钱包中的账户
+unlocked >>> list_my_accounts
+#查看账户资产
+unlocked >>> list_account_balances nathan
+#因为资产是和公钥关联的，一个账户会有很多个公钥，当启动一个网络时，因为账户和公钥还没有关联，所以账户和资产也就没有关联起来，查看到的余额还是0,这个时候账户可以发布一个交易信息，将账户和公钥关联起来，如下
+unlocked >>> import_balance nathan [5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3] true
+
+4.register new account
+#注册新的用户是需要手续费的，我们可以使用上面的系统预先存在的nathan账户来注册新的账户
+#只有终身会员才能充当注册员的角色，所以我们先要将nathan升级为终身会员
+unlocked >>> upgrade_account nathan true
+unlocked >>> create_account_with_brain_key "this is the brain key for new account" cary nathan nathan true
+#可用list_my_accounts查看创建的账户
+
+5.Transferring Currency
+unlocked >>> transfer nathan my-account 10000 BTS "have some BTS" true
+
+6.Becoming a Witness
+#查看系统中现有见证节点（active_witnesses）
+unlocked >>> get_global_properties
+#只有终身会员才能成为见证节点(操作不赘述，见上述)
+#注册为见证节点（这个url是什么？）
+unlocked >>> create_witness cary "http://witness.bar.com/" true
+#虽然已经注册，还需要股东投票才能正是成为见证节点（投票占比多少有效）
+unlocked >>> vote_for_witness cary cary true true
+unlocked >>> vote_for_witness nathan cary true true
+#投票后，还需要等到下一个maintenance interval审核通过方可(可用get_dynamic_global_properties查看该参数)
+#待投票完成后，用get_global_properties查看，已成为见证节点
+#但是还不能生产块
+7.Becoming a Delegate（与Witness类似）
+
+
+-----------------------------------------------------------解决libboost问题----------------------------------------------------
+#问题描述，apt-get install libboost-all-dev无法安装，报没有依赖错误
+sudo apt-get install aptitude
+sudo aptitude install libboost-all-dev
+
+------------------------------------------------------------花生壳SN码-----------------------------------------------------------------------------------
+https://b.oray.com/forward/
+
+
+
+
+------------------------------------------------------------打通app和私有链通信-------------------------------------------------------------------------------------------------
+一.使用花生壳穿透内网
+1.安装Phddns，启动服务
+下载地址：https://hsk.oray.com/download/
+使用帮助：http://service.oray.com/question/4287.html
+
+2.在https://b.oray.com上配置外网和内网IP和Port的映射
+
+3.配置witness_ness的config.ini文件，将rpc-endpoint设置为本地IP+Port
+
+4.在app的节点选择文件中，配置node server为：ws://外网域名+外网端口号
+
+
+
+
+
+
+
+
+
+
+
